@@ -1,0 +1,140 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mathsolutions}[2024/12/22 v1.0 Mathematics Solutions Package]
+
+% Formatting
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+
+
+% Document-specific changes
+\renewcommand{\thesection}{\thechapter\Alph{section}}
+
+% Core mathematical packages
+\RequirePackage{amsmath}    % Advanced mathematical formatting
+\RequirePackage{amsthm}     % Theorem environments
+\RequirePackage{amssymb}    % Additional mathematical symbols
+\RequirePackage{amsfonts}   % Mathematical fonts
+\RequirePackage{enumerate}  % Basic enumeration
+\RequirePackage{enumitem}   % Enhanced list customization
+\RequirePackage{mathtools}
+
+% For brackets
+\RequirePackage{stmaryrd}
+
+% Additional useful packages for solutions
+\RequirePackage{mdframed}   % For boxing solutions
+\RequirePackage{thmtools}   % Enhanced theorem management
+\RequirePackage{xcolor}     % For color support
+
+% Define solution environments
+\newmdtheoremenv{solution}{Solution}[chapter]
+\newmdtheoremenv{example}{Example}[chapter]
+
+% Create shortcuts for common mathematical structures
+\newcommand{\solve}{\noindent\textbf{Solution: }}
+\newcommand{\hint}{\noindent\textbf{Hint: }}
+\newcommand{\note}{\noindent\textbf{Note: }}
+\newcommand{\nul}{\text{null}}
+\newcommand{\range}{\text{range}}
+
+% Common mathematical shortcuts
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+
+\newcommand{\real}{\mathbb{R}}         % Real numbers
+\newcommand{\ints}{\mathbb{Z}}         % Integers
+\newcommand{\nat}{\mathbb{N}}         % Natural numbers
+\newcommand{\rat}{\mathbb{Q}}         % Rational numbers
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bO}{\mathbf{O}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bU}{\mathbf{U}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bZ}{\mathbf{Z}}
+
+
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\Implies}{\Rightarrow}
+\newcommand{\Impliedby}{\Leftarrow}
+
+\newcommand{\tor}{\text{ or }}
+\newcommand{\tand}{\text{ and }}
+\newcommand{\dom}{\text{dom }}
+\newcommand{\ran}{\text{ran }}
+\newcommand{\fld}{\text{fld }}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\underscore}{\underline{\;\;\;\;}}
+
+\newcommand{\exercise}[1]{\noindent \textbf{#1}.}
