@@ -92,3 +92,69 @@ In other words, there is no rational number whose square is 12.
 In other words, 12 does not have a rational square root. 
 $\Box$
 
+
+\newpage
+% Exercise 3
+\exercise{3}
+Prove Proposition 1.15.
+
+
+\vspace{2mm}
+\solve
+As a reminder, Proposition 1.15 states the following:
+
+\vspace{2mm}
+\noindent\textit{The axioms for multiplication imply the following statements.}
+\begin{enumerate}[label={(\alph*)}]
+    \item \textit{If} $x \neq 0$ \textit{and}  $xy = xz$ \textit{then} $y = z$.
+    \item \textit{If} $x \neq 0$ \textit{and}  $xy = x$ \textit{then} $y = 1$.
+    \item \textit{If} $x \neq 0$ \textit{and}  $xy = 1$ \textit{then} $y = x^{-1}$.
+    \item \textit{If} $x \neq 0$ \textit{then} $(x^{-1})^{-1} = x$.
+\end{enumerate}
+
+Let's prove each statement, one by one.
+\begin{enumerate}[label=(\alph*)]
+    \item % (a)
+    Suppose $x \neq 0$ and $xy = xz$.
+    Then
+    \begin{align*}
+        y &= 1y &\text{by (M4)}\\
+        &= (xx^\inv) y &\text{by (M5)}\\
+        &= x(x^\inv y) &\text{by (M3)}\\
+        &= x(y x^\inv) &\text{by (M2)}\\
+        &= (xy)x^\inv &\text{by (M3)}\\
+        &= (xz)x^{\inv} &\text{by assumption}\\
+        &= (zx)x^\inv &\text{by (M2)}\\
+        &= z(xx^\inv) &\text{by (M3)}\\
+        &= z1 &\text{by (M5)}\\
+        &= z &\text{by (M4)}
+    \end{align*}
+    So $y=z$.
+
+    
+    \item % (b)
+    Suppose $x \neq 0$ and $xy = x$.
+    Note that $x = x1$, by axiom (M4).
+    So it must be true that $xy = x1$.
+    Appealing to our work in part (a), we can deduce that $y = 1$.
+    
+    \item % (c)
+    Suppose $x \neq 0$ and $xy = 1$.
+    Then
+    \begin{align*}
+        y &= 1y &\text{by (M4)}\\
+        &= (xx^\inv) y &\text{by (M5)}\\
+        &= x(x^\inv y) &\text{by (M3)}\\
+        &= x(yx^\inv) &\text{by (M2)}\\
+        &= (xy)x^\inv &\text{by (M3)}\\
+        &= 1x^\inv &\text{by assumption}\\
+        &= x^\inv &\text{by (M4)}
+    \end{align*}
+    So $y = x^\inv$.
+    
+    \item % (d)
+    Assume that $x \neq 0$.
+    Then by axiom (M5), $x^\inv x = 1$.
+    So by our work in part (c), it must be true that $x = (x^\inv)^\inv$.
+\end{enumerate}
+And we are done!
