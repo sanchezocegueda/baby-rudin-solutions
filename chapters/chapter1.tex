@@ -49,3 +49,45 @@ that is, $rx \notin \rat$.
 In other words, $rx$ is irrational.
 $\Box$
 
+\newpage
+\vspace{5mm}
+% Exercise 2
+\exercise{2} 
+Prove that there is no rational number whose square is 12.
+
+
+\vspace{2mm}
+\solve
+The proof is rather similar to the proof that $\sqrt2$ is irrational.
+Assume that there is some $x \in \rat$ such that $x^2= 12$.
+This means that $x = \frac{m}{n}$, with $m, n \in \bbZ$, such that at most one of $m, n$ is divisible by 3.
+Observe that $x^2 = (\frac{m}{n})^2$, meaning that $(\frac{m}{n})^2 = 12$.
+All of the above implies that 
+$$m^2 = 12n^2.$$
+Let's now proceed by checking the different possible cases.
+
+First, suppose that $m$ is not divisible by 3.
+Then clearly $m^2$ is not divisible by 3 either.
+However, $12n^2$ is definitely divisible by 3.
+This would imply that $m^2 \neq 12n^2$, which is clearly not true.
+So it can't be true that $m$ is not divisible by 3.
+
+So the only choice we have left is that $m$ \underline{is} divisible by 3.
+In this case, $m^2$ must be divisible by 9.
+This would imply that $12n^2$ must also be divisible by 9, since $m^2 = 12n^2$, per our work above.
+However, this cannot be the case.
+12 is not divisible by 9, but it is divisible by 3.
+% After dividing, we would have that
+% $$\frac{m^2}{3} = 4n^2$$
+So we still have a factor of 3 left.
+This would imply that $n^2$ must be divisible by 3, but that itself would imply that $n$ is divisible by 3.
+However, by assumption, at most one of $m, n$ can be divisible by 3.
+This would lead us to conclude that
+$m^2 \neq 12n^2,$
+a clear contradiction.
+
+We have exhausted all possible choices of $x \in \rat$.
+This means that there does not exist any $x \in \rat$ such that $x^2 = 12$.
+In other words, there is no rational number whose square is 12.
+In other words, 12 does not have a rational square root.
+
