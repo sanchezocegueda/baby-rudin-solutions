@@ -1,1 +1,51 @@
 % Exercise 1
+\exercise{1}
+If $r$ is rational $(r \neq 0)$ and $x$ is irrational, prove that $r + x$ and $rx$ are irrational.
+
+\vspace{2mm}
+\solve
+We'll start with the proof that $r +x$ is irrational.
+After that, we'll move on to the proof that $rx$ is irrational.
+Both proofs are very similar.
+Note that I will use the notation $r^{-1}$ instead of $1/r$ for multiplicative inverses, since I think the notation is a lot cleaner this way.
+
+\vspace{2mm}
+\noindent \underline{$r + x \notin \rat$:}
+Assume that $r + x \in \rat$, for the sake of contradiction.
+If $r + x$ is rational, then for any $y \in \rat$, $(r + x) + y$ is also rational (since $\rat$ is a field), by the field axiom (A1).
+Note that since $r \in \rat$, then $-r \in \rat$ too, by axiom (A5).
+This means that
+\begin{align*}
+    (r + x) + (-r) &\in \rat &\text{by (A1)} \\
+    \Implies r + (x + (-r)) &\in \rat &\text{by (A3)} \\
+    \Implies r + (-r + x) &\in \rat &\text{by (A2)} \\
+    \Implies (r + (-r)) + x &\in \rat &\text{by (A3)} \\
+    \Implies 0 + x &\in \rat &\text{by (A5)}\\
+    \Implies x &\in \rat &\text{by (A4)}
+\end{align*}
+By assumption, $x$ is irrational, which means that $x \notin \rat$.
+However, we just deduced that $x \in \rat$ from our assumptions.
+The only way to resolve this contradiction is to realize that our initial assumption was wrong.
+Hence, $r + x \notin \rat$.
+In other words, $r + x$ is irrational.
+
+\vspace{2mm}
+\noindent \underline{$rx \notin \rat$:}
+Similar to the last proof, assume that $rx \in \rat$ for the sake of contradiction.
+By axiom (M1), for any $y \in \rat$, it must be true that $(rx)y \in \rat$.
+Also, since $r \in \rat$ and $r \neq 0$, it follows that $r^{-1} \in \rat$ too, by axiom (M5).
+We can now deduce that
+\begin{align*}
+    (rx)r^{-1} &\in \rat &\text{by (M1)} \\
+    \Implies r (x r^{-1}) &\in \rat &\text{by (M3)}\\
+    \Implies r (r^{-1} x) &\in \rat &\text{by (M2)}\\
+    \Implies (r r^{-1}) x &\in \rat &\text{by (M3)}\\
+    \Implies 1x &\in \rat &\text{by (M5)}\\
+    \Implies x &\in \rat &\text{by (M4)}
+\end{align*}
+You probably get the gist by now, but we cannot have $x \notin \rat$ by assumption and then deduce that $x \in \rat$ by applying the field axioms.
+The only possible way to move forward is to conclude that our initial assumption is wrong; 
+that is, $rx \notin \rat$.
+In other words, $rx$ is irrational.
+$\Box$
+
