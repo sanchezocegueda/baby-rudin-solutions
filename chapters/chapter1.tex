@@ -159,3 +159,45 @@ Let's prove each statement, one by one.
 \end{enumerate}
 And we are done!
 $\Box$
+
+\newpage
+\exercise{4}
+Let $E$ be a nonempty subset of an ordered set;
+suppose $\alpha$ is a lower bound of $E$ and $\beta$ is an upper bound of $E$.
+Prove that $\alpha \leq \beta$.
+
+\vspace{2mm}
+\solve
+Suppose $E$ is such a set, and let's give its ordered superset a name, say $S$.
+Given that $\alpha$ is a lower bound of $E$, then it must be true that
+$$\forall x ~(x \in E \Implies \alpha \leq x).$$
+Similarly, since $\beta$ is an upper bound of $E$, then it follows that
+$$\forall x~ (x \in E \Implies x \leq \beta).$$
+
+We know that $E$ is nonempty, meaning that there must exist some element $x^* \in E$.
+We will use this specific element to prove that $\alpha \leq \beta$.
+Recall that, by definition, $a \leq b$ means that either $a < b$ or $a = b$.
+So there are four possible cases that can apply to our situation:
+\begin{enumerate}[label=(\alph*)]
+    \item $\alpha = x^*$ and $x^* = \beta$,
+    \item $\alpha = x^*$ and $x^* < \beta$,
+    \item $\alpha < x^*$ and $x^* = \beta$, and
+    \item $\alpha < x^*$ and $x^* = \beta$.
+\end{enumerate}
+
+We will now show that we arrive at the same conclusion in all possible cases—that $\alpha \leq \beta$ in all possible scenarios.
+
+\begin{enumerate}[label=(\alph*)]
+    \item \underline{$\alpha = x^*$ and $x^* = \beta$:} In this case, we can simply appeal to the transitivity of $=$ and deduce that $\alpha = \beta$.
+    If $\alpha = \beta$, then it clearly follows that $\alpha \leq \beta$.
+    \item \underline{$\alpha = x^*$ and $x^* < \beta$:} Here, since $\alpha = x^*$, we can substitute $\alpha$ for $x^*$ in the $x^* < \beta$ inequality.
+    This tells us that $\alpha < \beta$, from which it follows that $\alpha \leq \beta$.
+    \item \underline{$\alpha < x^*$ and $x^* = \beta$:} Since $\beta = x^*$, we can substitue $\beta$ for $x^*$ in the $\alpha < x^*$ inequality.
+    This tells us that $\alpha < \beta$, so it follows that $\alpha \leq \beta$.
+    \item \underline{$\alpha < x^*$ and $x^* < \beta$:} In this final case, we can appeal to the transitivity of the $<$ relation.
+    After doing this, we get that $\alpha < \beta$, and it once more follows that $\alpha \leq \beta$.
+\end{enumerate}
+
+As you can see, no matter which way we go, we arrive at the same conclusion: $\alpha \leq \beta$.
+This means that the statement holds in general, and we are done!
+$\Box$
