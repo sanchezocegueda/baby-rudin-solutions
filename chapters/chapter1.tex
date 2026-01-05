@@ -61,17 +61,28 @@ Prove that there is no rational number whose square is 12.
 The proof is rather similar to the proof that $\sqrt2$ is irrational.
 Assume that there is some $x \in \rat$ such that $x^2= 12$.
 This means that $x = \frac{m}{n}$, with $m, n \in \bbZ$, such that at most one of $m, n$ is divisible by 3.
-Observe that $x^2 = (\frac{m}{n})^2$, meaning that $(\frac{m}{n})^2 = 12$.
-All of the above implies that 
+Observe that $x^2 = (\frac{m}{n})^2 = \frac{m^2}{n^2}$, meaning that $\frac{m^2}{n^2} = 12$.
+The facts above imply that 
 $$m^2 = 12n^2.$$
-Let's now proceed by checking the different possible cases.
+We will now proceed with a case split.
+Specifically, we will consider two specific cases: the case where $m$ is divisible by 3 and the case in which it is not\footnote{
+We can choose whatever case split we want, as long as it benefits us in the proofwriting process.
+All we have to do is make sure that we do not accidentally exclude any values of $m$.
+Since $m$ either is or is not divisible by 3 for all possible values of $m$, we can safely proceed with our case split.
+}.
 
+\vspace{2mm}
+\noindent
+\underline{$m$ is divisible by 3:}
 First, suppose that $m$ is not divisible by 3.
 Then clearly $m^2$ is not divisible by 3 either.
 However, $12n^2$ is definitely divisible by 3.
 This would imply that $m^2 \neq 12n^2$, which is clearly not true.
 So it can't be true that $m$ is not divisible by 3.
 
+\vspace{2mm}
+\noindent
+\underline{$m$ is not divisble by 3:}
 So the only choice we have left is that $m$ \underline{is} divisible by 3.
 In this case, $m^2$ must be divisible by 9.
 This would imply that $12n^2$ must also be divisible by 9, since $m^2 = 12n^2$, per our work above.
@@ -129,7 +140,7 @@ Let's prove each statement, one by one.
         &= z1 &\text{by (M5)}\\
         &= z &\text{by (M4)}
     \end{align*}
-    So $y=z$.
+    By the transitivity of =, it follows that $y=z$.
 
     
     \item % (b)
@@ -160,6 +171,7 @@ Let's prove each statement, one by one.
 And we are done!
 $\Box$
 
+% Exercise 4
 \newpage
 \exercise{4}
 Let $E$ be a nonempty subset of an ordered set;
@@ -200,4 +212,63 @@ We will now show that we arrive at the same conclusion in all possible cases—t
 
 As you can see, no matter which way we go, we arrive at the same conclusion: $\alpha \leq \beta$.
 This means that the statement holds in general, and we are done!
+$\Box$
+
+
+% Exercise 5
+\newpage
+\exercise{5}
+Let $A$ be a nonempty set of real numbers which is bounded below.
+Let $-A$ be the set of all numbers $-x$, where $x \in A$.
+Prove that
+$$\inf A = -\sup (-A).$$
+
+\vspace{2mm}
+\solve
+The key to this exercise is to recall that $\real$ has the least-upper-bound property.
+This means that both $A$ and $-A$, being subsets of $\real$, must have their infima in $\real$.
+Also, as shown in Theorem 1.11 in Rudin, the least-upper-bound property implies the greatest-lower-bound property.
+This means that the suprema of $A$ and $-A$ must also exist in $\real$.
+Most relevant to the problem at hand, though: 
+$$\inf A \in \real \text{ and } \sup (-A) \in \real.$$
+
+Our strategy will be to use the definition of $\inf$ and $\sup$ to show that 
+$\inf A \leq -\sup (-A)$ and $\inf A \geq -\sup (-A)$.
+Note that if both of these are true at the same time, then $\inf A = -\sup (-A)$, which is what we want.
+
+\vspace{2mm}
+\noindent\underline{$\inf A \leq -\sup (-A)$:}
+We will now show that $-\sup (-A)$ is a lower bound of $A$.
+By definition, $\sup (-A)$ is such that
+$$\forall (-x) \in -A,~ -x \leq \sup(-A).$$
+Equivalently,
+$$\forall (-x) \in -A,~ -(-x) \geq -\sup(-A).$$
+We've shown previously that $-(-x) = x$, and we also know that $x \in A$;
+this is how the set $-A$ was defined, after all.
+So it must be true that
+$$\forall x \in A,~ -\sup (-A) \leq -x.$$
+In other words, $-\sup (-A)$ is a lower bound of $A$.
+By the definition of $\inf A$, we must have that
+$$\inf A \leq -\sup(-A).$$
+
+
+\vspace{2mm}
+\noindent
+\underline{$\inf A \geq -\sup (-A)$:}
+Now we proceed to show that $-\inf A$ is an upper bound of $-A$.
+By definition, $\inf A$ is such that 
+$$\forall x \in A,~ \inf A \leq x.$$
+Observe that this is equivalent to saying that
+$$\forall x \in A, ~ -\inf A \geq -x.$$
+In other words, 
+$$\forall (-x) \in -A, ~ -\inf A \geq -x.$$
+This means that $-\inf A$ is an upper bound of $-A$.
+By the definition of $\sup (-A)$, it must be true that
+$$-\inf A \leq \sup (-A).$$
+But this is equivalent to saying that
+$$\inf A \geq -\sup (-A).$$
+
+\vspace{2mm}
+\noindent
+\underline{Conclusion:} The only time in which the statements $\inf A \leq -\sup (-A)$ and $\inf A \geq -\sup (-A)$ can both be true is when $\inf A = -\sup (-A)$, as desired.
 $\Box$
